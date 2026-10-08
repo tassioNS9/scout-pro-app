@@ -7,6 +7,7 @@
     "scheme": "scoutpro",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "newArchitecture": true,
     "ios": {
       "supportsTablet": true
     },
@@ -24,9 +25,6 @@
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
-    "plugins": [
-      "expo-status-bar",
-      "expo-router"
-    ]
+    "plugins": ["expo-status-bar", "expo-router"]
   }
 }
