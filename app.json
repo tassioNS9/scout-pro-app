@@ -4,6 +4,7 @@
     "slug": "scout-pro-app",
     "version": "1.0.0",
     "orientation": "portrait",
+    "scheme": "scoutpro",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
@@ -24,8 +25,8 @@
       "bundler": "metro"
     },
     "plugins": [
-      "expo-status-bar"
+      "expo-status-bar",
+      "expo-router"
     ]
-    
   }
 }
