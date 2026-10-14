@@ -9,19 +9,23 @@
     "@shopify/react-native-skia": "2.6.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "drizzle-orm": "^0.45.4",
     "expo": "~57.0.27",
     "expo-constants": "~57.0.21",
     "expo-linear-gradient": "~57.0.2",
     "expo-linking": "~57.0.12",
     "expo-router": "~57.0.25",
+    "expo-sqlite": "~57.0.4",
     "expo-status-bar": "~57.0.1",
     "nativewind": "4.2.7",
     "react": "19.2.3",
     "react-native": "0.86.3",
     "react-native-gesture-handler": "~2.32.0",
+    "react-native-get-random-values": "~1.11.0",
     "react-native-reanimated": "^4.7.1",
     "react-native-safe-area-context": "~5.7.0",
     "react-native-screens": "~4.26.0",
+    "react-native-uuid": "^2.0.4",
     "react-native-worklets": "^0.13.0",
     "tailwind-merge": "^3.7.0",
     "tailwindcss-animate": "^1.0.7",
@@ -29,7 +33,10 @@
   },
   "devDependencies": {
     "@types/react": "~19.2.2",
+    "@types/uuid": "^11.0.0",
+    "babel-plugin-inline-import": "^3.0.0",
     "babel-preset-expo": "^57.0.14",
+    "drizzle-kit": "^0.31.11",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.4.17",
     "typescript": "~6.0.3"
@@ -38,7 +45,10 @@
     "start": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
   },
   "private": true
 }
