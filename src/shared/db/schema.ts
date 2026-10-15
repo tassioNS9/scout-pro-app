@@ -213,13 +213,3 @@ export const estatisticasTableRelations = relations(
     }),
   }),
 );
-
-export const relatoriosTableRelations = relations(
-  relatoriosTable,
-  ({ one }) => ({
-    partida: one(partidasTable, {
-      fields: [relatoriosTable.idPartida],
-      references: [partidasTable.id],
-    }),
-  }),
-);
