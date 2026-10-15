@@ -12,6 +12,7 @@
     "drizzle-orm": "^0.45.4",
     "expo": "~57.0.27",
     "expo-constants": "~57.0.21",
+    "expo-drizzle-studio-plugin": "^0.2.1",
     "expo-linear-gradient": "~57.0.2",
     "expo-linking": "~57.0.12",
     "expo-router": "~57.0.25",

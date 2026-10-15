@@ -9,7 +9,8 @@ import { ThemeProvider } from "expo-router/react-navigation";
 import { PortalHost } from "@rn-primitives/portal";
 import { NAV_THEME } from "@/lib/theme";
 import { seedDatabase } from "@/shared/db/seed";
-import { DATABASE_NAME } from "@/shared/db"; // Importa o nome do banco de dados do arquivo db/index.ts
+import { DATABASE_NAME, expoDb } from "@/shared/db"; // Importa o nome do banco de dados do arquivo db/index.ts
+import { useDrizzleStudio } from "expo-drizzle-studio-plugin";
 // @ts-expect-error Global CSS is loaded for its side effects by Expo.
 import "@/styles/global.css";
 
@@ -42,6 +43,7 @@ function InitializesDatabase() {
   const sqliteDb = useSQLiteContext();
   const db = drizzle(sqliteDb);
 
+  useDrizzleStudio(expoDb);
   // O useMigrations aplica os arquivos SQL gerados pelo drizzle-kit na primeira execução
   const { success, error } = useMigrations(db, migrations);
 
