@@ -5,7 +5,6 @@ import {
   partidasTable,
   eventosTable,
   estatisticasTable,
-  relatoriosTable,
 } from "./schema";
 import { count } from "drizzle-orm";
 import "react-native-get-random-values";
@@ -107,18 +106,6 @@ export async function seedDatabase() {
       idJogador: jogador2Id,
       idPartida: partidaId,
       nota: 8.5,
-      createdAt: agora,
-      updatedAt: agora,
-    });
-
-    // 7. Inserir Relatório Pós-Jogo
-    await db.insert(relatoriosTable).values({
-      id: relatorioId,
-      idPartida: partidaId,
-      melhorJogador: jogador2Id,
-      analiseAoVivo:
-        "Bom controle de bola no primeiro tempo, pressão alta funcionou bem.",
-      sugestoesAoVivo: "Manter a compactação defensiva no segundo tempo.",
       createdAt: agora,
       updatedAt: agora,
     });
