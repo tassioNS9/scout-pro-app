@@ -10,6 +10,7 @@ import { PortalHost } from "@rn-primitives/portal";
 import { NAV_THEME } from "@/lib/theme";
 import { seedDatabase } from "@/shared/db/seed";
 import { DATABASE_NAME } from "@/shared/db"; // Importa o nome do banco de dados do arquivo db/index.ts
+import ToastManager from "toastify-react-native";
 // @ts-expect-error Global CSS is loaded for its side effects by Expo.
 import "@/styles/global.css";
 
@@ -78,6 +79,7 @@ function InitializesDatabase() {
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(tabs)" />
       </Stack>
+      <ToastManager useModal={false} />
       <PortalHost />
     </ThemeProvider>
   );
