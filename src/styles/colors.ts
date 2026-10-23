@@ -11,6 +11,10 @@ export const colors = {
   danger: "#DC3545",
   success: "#28A745",
   warning: "#FFC107",
+  "accent-red-background-primary": "#AA2834",
+  "accent-red": "#F75A68",
+  dim: "#4b5780",
+
   gray: {
     100: "#ADADAD",
     200: "#949494",
@@ -18,4 +22,13 @@ export const colors = {
     400: "#3D3D3D",
     500: "#1D1D1D",
   },
+};
+
+export const scoutColors = {
+  bg: "#13192b",
+  bg_alt: "#0f1422",
+  dim: "#4b5780",
+  green: "#00e676",
+  text: "#e5e7eb",
+  // ...demais cores scout
 };

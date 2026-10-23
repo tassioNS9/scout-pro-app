@@ -4,76 +4,81 @@
 
 @layer base {
   :root {
-    --background: 0 0% 96%;
-    --foreground: 0 0% 12%;
+    --background: 0 0% 100%;
+    --foreground: 29 22% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 12%;
+    --card-foreground: 29 22% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 12%;
+    --popover-foreground: 29 22% 11%;
 
-    --primary: 267 64% 52%;
-    --primary-foreground: 0 0% 100%;
+    /* green-600 */
+    --primary: 142 76% 36%;
+    /* green-50 */
+    --primary-foreground: 138 76% 97%;
 
-    --secondary: 258 30% 92%;
-    --secondary-foreground: 267 64% 30%;
+    --secondary: 240 6% 97%;
+    --secondary-foreground: 29 10% 28%;
 
-    --muted: 258 20% 92%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 240 4% 96%;
+    --muted-foreground: 240 4% 46%;
 
-    --accent: 228 90% 92%;
-    --accent-foreground: 228 60% 30%;
+    --accent: 240 4% 96%;
+    --accent-foreground: 240 11% 4%;
 
-    --destructive: 354 70% 53%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 357 100% 45%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 258 15% 86%;
-    --input: 258 15% 86%;
-    --ring: 267 64% 52%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 216 100% 58%;
 
-    --radius: 0.625rem;
+    --radius: 0.65rem;
 
-    --chart-1: 267 64% 52%;
-    --chart-2: 228 90% 68%;
-    --chart-3: 145 63% 42%;
-    --chart-4: 43 96% 56%;
-    --chart-5: 354 70% 53%;
+    /* green-500, purple-500, orange-500, blue-500, green-800 */
+    --chart-1: 142 71% 45%;
+    --chart-2: 271 91% 65%;
+    --chart-3: 25 95% 53%;
+    --chart-4: 217 91% 60%;
+    --chart-5: 143 64% 24%;
   }
 
   .dark:root {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 96%;
+    --background: 240 11% 4%;
+    --foreground: 29 6% 80%;
 
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 96%;
+    --card: 240 6% 10%;
+    --card-foreground: 29 6% 80%;
 
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 96%;
+    --popover: 240 6% 10%;
+    --popover-foreground: 29 6% 80%;
 
-    --primary: 267 64% 68%;
-    --primary-foreground: 0 0% 10%;
+    /* green-500 */
+    --primary: 142 71% 45%;
+    --primary-foreground: 138 76% 97%;
 
-    --secondary: 258 20% 20%;
-    --secondary-foreground: 0 0% 96%;
+    --secondary: 240 5% 13%;
+    --secondary-foreground: 29 3% 62%;
 
-    --muted: 258 15% 18%;
-    --muted-foreground: 0 0% 68%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 6% 64%;
 
-    --accent: 228 35% 22%;
-    --accent-foreground: 228 90% 85%;
+    --accent: 240 4% 16%;
+    --accent-foreground: 29 11% 89%;
 
-    --destructive: 354 60% 42%;
+    --destructive: 359 100% 70%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 258 12% 25%;
-    --input: 258 12% 25%;
-    --ring: 267 64% 68%;
+    /* no Next era branco com 10% / 15% de opacidade; aqui já está pré-misturado sobre o background */
+    --border: 240 3% 14%;
+    --input: 240 2% 18%;
+    --ring: 225 84% 49%;
 
-    --chart-1: 267 64% 68%;
-    --chart-2: 228 90% 72%;
-    --chart-3: 145 55% 55%;
-    --chart-4: 43 90% 65%;
-    --chart-5: 354 70% 65%;
+    --chart-1: 142 71% 45%;
+    --chart-2: 271 91% 65%;
+    --chart-3: 25 95% 53%;
+    --chart-4: 217 91% 60%;
+    --chart-5: 143 64% 24%;
   }
 }
