@@ -33,7 +33,7 @@ const cards: CardItem[] = [
         color="#ffffff"
       />
     ), // ShieldHalf
-    href: "/times",
+    href: "/Teams",
     colors: ["#16a34a", "#15803d"], // green-600 -> green-700
   },
   {
@@ -75,9 +75,9 @@ const cards: CardItem[] = [
   },
   {
     title: "Configurações",
-    description: "Análise automática de formações",
+    description: "Gerencie suas configurações",
     icon: <Ionicons name="settings" size={72} color="#ffffff" />, // Grid3x3
-    href: "/config",
+    href: "/settings",
     colors: ["#9696AB", "#404A4A"], // teal
   },
   {
