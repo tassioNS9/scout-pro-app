@@ -7,7 +7,7 @@ import { Time } from "@/shared/db/schema";
 import { Text } from "@/components/ui/text";
 import { colors } from "@/styles/colors";
 
-const EditarTimeButton = ({ time }: { time: Time }) => {
+const EditTeamButton = ({ team }: { team: Time }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -29,4 +29,4 @@ const EditarTimeButton = ({ time }: { time: Time }) => {
   );
 };
 
-export default EditarTimeButton;
+export default EditTeamButton;

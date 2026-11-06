@@ -27,23 +27,10 @@ import { AppSelect } from "@/shared/components/AppSelect";
 import { timesTable } from "@/shared/db/schema";
 import { createTeam } from "@/shared/repositories/teams.repository";
 import { scoutColors } from "@/styles/colors";
-import { useRef } from "react";
 
 import { CreateTimeFormValues, createTimeSchema } from "./schema";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import type { TriggerRef } from "@rn-primitives/select";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Platform } from "react-native";
 
-interface AddTimeFormProps {
+interface AddTeamFormProps {
   time?: typeof timesTable.$inferSelect;
   /** Chamado após salvar com sucesso (ex.: recarregar a lista) */
   onSuccess?: () => void;
@@ -54,30 +41,19 @@ interface AddTimeFormProps {
 // O value precisa ser igual ao texto usado na lista/filtro ("Sub-17", "Profissional"),
 // senão o default do form e as cores das categorias não batem.
 const categorias = [
-  { label: "Sub-15", value: "Sub-15" },
   { label: "Sub-17", value: "Sub-17" },
+  { label: "Sub-20", value: "Sub-20" },
   { label: "Profissional", value: "Profissional" },
 ];
 
-export default function AddTimeForm({
+export default function AddTeamForm({
   time,
   onSuccess,
   onClose,
-}: AddTimeFormProps) {
+}: AddTeamFormProps) {
   const { height } = useWindowDimensions();
   const [photoUri, setPhotoUri] = useState<string | null>(null);
   const [photoModalOpen, setPhotoModalOpen] = useState(false);
-  const ref = useRef<TriggerRef>(null);
-  const insets = useSafeAreaInsets();
-  const contentInsets = {
-    top: insets.top,
-    bottom: Platform.select({
-      ios: insets.bottom,
-      android: insets.bottom + 24,
-    }),
-    left: 12,
-    right: 12,
-  };
 
   const {
     control,

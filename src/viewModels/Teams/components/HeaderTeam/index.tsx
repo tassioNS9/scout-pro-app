@@ -2,21 +2,11 @@ import { View } from "react-native";
 import { Text } from "@/components/ui/text";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, Shield } from "lucide-react-native";
-import AddTimeButton from "@/viewModels/Teams/components/AddTimeButton";
-import FilterComponent from "@/viewModels/Teams/components/Filter";
+import AddTimeButton from "@/viewModels/Teams/components/AddTeamButton";
 import { scoutColors } from "@/styles/colors";
 import { router } from "expo-router";
-import { useState } from "react";
-import { Time } from "@/shared/db/schema";
 
-interface HeaderTeamProps {
-  times: Time[];
-}
-
-export const HeaderTeam = ({ times }: HeaderTeamProps) => {
-  const [search, setSearch] = useState("");
-  const [category, setCategory] = useState("Todas");
-
+export const HeaderTeam = () => {
   return (
     <View>
       {/* Header */}
@@ -49,15 +39,6 @@ export const HeaderTeam = ({ times }: HeaderTeamProps) => {
 
         <AddTimeButton />
       </View>
-
-      {/* Filters */}
-      <FilterComponent
-        totalTimes={times.length}
-        search={search}
-        onSearchChange={setSearch}
-        category={category}
-        onCategoryChange={setCategory}
-      />
     </View>
   );
 };

@@ -1,38 +1,42 @@
 import { useRouter } from "expo-router";
 import { ChevronLeft, Shield } from "lucide-react-native";
-import { useMemo, useState } from "react";
-import { Text, View } from "react-native";
+import { ComponentProps } from "react";
+import { FlatList, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { Button } from "@/components/ui/button";
 import { ScoutGradient } from "@/shared/components/ScoutGradient";
-import AddTimeButton from "@/viewModels/Teams/components/AddTimeButton";
+import AddTimeButton from "@/viewModels/Teams/components/AddTeamButton";
 import FilterComponent from "@/viewModels/Teams/components/Filter";
-import ListTimes from "@/viewModels/Teams/components/ListTimes";
-// import { listTimes } from "@/services/times";
 import { scoutColors } from "@/styles/colors";
-import { EmptyList } from "@/viewModels/Teams/components/EmptyList";
-import { useTeams } from "@/shared/hooks/useTeams";
 import { Loading } from "@/shared/components/Loading";
+import { ItemTeamCard } from "./components/ItemTeamCard";
+import { EmptyList } from "./components/EmptyList";
 
-export default function TimesScreen() {
+type TeamsViewProps = {
+  teams: ComponentProps<typeof ItemTeamCard>["team"][];
+  filteredTeams: ComponentProps<typeof ItemTeamCard>["team"][];
+  loading: boolean;
+  refreshing: boolean;
+  search: string;
+  setSearch: (value: string) => void;
+  category: string;
+  setCategory: (value: string) => void;
+  refreshTeams: () => void;
+};
+
+export function TeamsView({
+  teams,
+  filteredTeams,
+  loading,
+  refreshing,
+  search,
+  setSearch,
+  category,
+  setCategory,
+  refreshTeams,
+}: TeamsViewProps) {
   const router = useRouter();
-  const { teams, loading } = useTeams();
-  console.log("teams", teams);
-  const [refreshing, setRefreshing] = useState(false);
-  const [search, setSearch] = useState("");
-  const [category, setCategory] = useState("Todas");
-
-  const filtered = useMemo(() => {
-    const term = search.toLowerCase();
-    return teams.filter((t) => {
-      const matchSearch =
-        t.nome.toLowerCase().includes(term) ||
-        !!t.cidade?.toLowerCase().includes(term);
-      const matchCat = category === "Todas" || t.categoria === category;
-      return matchSearch && matchCat;
-    });
-  }, [teams, search, category]);
 
   const header = (
     <View>
@@ -87,11 +91,18 @@ export default function TimesScreen() {
         {loading ? (
           <Loading />
         ) : (
-          <ListTimes
-            times={filtered}
-            refreshing={refreshing}
+          <FlatList
+            data={filteredTeams}
+            keyExtractor={(time) => time.id}
+            contentContainerClassName="p-4 pb-10"
+            keyboardShouldPersistTaps="handled"
+            showsVerticalScrollIndicator={false}
             ListHeaderComponent={header}
             ListEmptyComponent={<EmptyList />}
+            ItemSeparatorComponent={() => <View className="h-4" />}
+            refreshing={refreshing}
+            onRefresh={refreshTeams}
+            renderItem={({ item }) => <ItemTeamCard team={item} />}
           />
         )}
       </SafeAreaView>

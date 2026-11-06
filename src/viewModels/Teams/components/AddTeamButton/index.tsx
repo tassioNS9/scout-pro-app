@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { Text } from "@/components/ui/text";
 
-import AddTimeForm from "../AddTeamForm";
-const AddTimeButton = () => {
+import AddTeamForm from "../AddTeamForm";
+
+const AddTeamButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -17,9 +18,9 @@ const AddTimeButton = () => {
         </Button>
       </DialogTrigger>
 
-      <AddTimeForm onSuccess={() => setIsOpen(false)} />
+      <AddTeamForm onSuccess={() => setIsOpen(false)} />
     </Dialog>
   );
 };
 
-export default AddTimeButton;
+export default AddTeamButton;
