@@ -33,14 +33,14 @@ const cards: CardItem[] = [
         color="#ffffff"
       />
     ), // ShieldHalf
-    href: "/Teams",
+    href: "/teams",
     colors: ["#16a34a", "#15803d"], // green-600 -> green-700
   },
   {
     title: "Jogadores",
     description: "Registre eventos em tempo real",
     icon: <Entypo name="user" size={72} color="#ffffff" />, // Zap
-    href: "/scout",
+    href: "/players",
     colors: ["#429E53", "#264723"], // green-600 -> green-700
   },
   {
