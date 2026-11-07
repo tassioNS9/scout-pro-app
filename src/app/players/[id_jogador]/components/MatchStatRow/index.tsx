@@ -6,7 +6,7 @@ type MatchStatRowProps = {
   value: ReactNode;
 };
 
-export function MatchStatRow({ label, value }: MatchStatRowProps) {
+export default function MatchStatRow({ label, value }: MatchStatRowProps) {
   return (
     <View className="flex-row justify-between">
       <Text className="text-zinc-400">{label}</Text>

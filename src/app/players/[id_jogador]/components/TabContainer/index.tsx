@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FlatList, ScrollView, Text, View } from "react-native";
 
 import { Button } from "@/components/ui/button";
-import { AggregateStatCard } from "../AggregateStatCard";
+import AggregateStatCard from "../AggregateStatCard";
 import GeralTab from "../GeralTab";
 import HistoricTab from "../HistoricTab";
 
@@ -77,13 +77,13 @@ interface PlayerInfo {
   nota: number | null;
 }
 
-export const TabContainer = ({
+export default function TabContainer({
   playerInfo,
   matchs,
 }: {
   playerInfo: PlayerInfo;
   matchs: PartidaComEventosJogador[];
-}) => {
+}) {
   const [activeTab, setActiveTab] = useState<
     "geral" | "estatisticas" | "historico"
   >("geral");
@@ -190,4 +190,4 @@ export const TabContainer = ({
       </ScrollView>
     </View>
   );
-};
+}
