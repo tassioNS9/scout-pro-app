@@ -25,7 +25,6 @@ export const useMatchsViewModel = () => {
         getAllMatches(),
         getTimesByUser(USER_ID),
       ]);
-      console.log("Loaded Matchs:", loadedMatchs);
 
       setMatchs(loadedMatchs);
       setTimes(loadedTimes);
