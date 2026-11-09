@@ -30,7 +30,7 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="partidas"
+        name="matchs"
         options={{
           title: "PARTIDAS",
           tabBarActiveTintColor: colors["success"],
