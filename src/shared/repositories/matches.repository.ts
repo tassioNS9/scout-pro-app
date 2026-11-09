@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import { db } from "@/shared/db";
-import { eq } from "drizzle-orm";
+import { eq, and } from "drizzle-orm";
 import { InsertPartida, partidasTable, timesTable } from "@/shared/db/schema";
 
 export async function createMatch(
@@ -44,4 +44,20 @@ export async function getAllMatches() {
 
 export async function deleteMatch(matchId: string) {
   await db.delete(partidasTable).where(eq(partidasTable.id, matchId));
+}
+
+export async function getMatchById(partidaId: string) {
+  const [row] = await db
+    .select(partidaSelectShape)
+    .from(partidasTable)
+    .innerJoin(timesTable, eq(partidasTable.idTime, timesTable.id))
+    .where(
+      and(
+        eq(partidasTable.id, partidaId),
+        eq(timesTable.userId, "local-guest-user"),
+      ),
+    )
+    .limit(1);
+
+  return row; // já é o objeto "achatado" com nomeTime, ou undefined
 }
