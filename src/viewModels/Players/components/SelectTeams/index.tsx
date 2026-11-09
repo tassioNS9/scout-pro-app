@@ -28,7 +28,6 @@ const SelectTeams = ({
 
   function handleValueChange(teamId: string) {
     onTeamChange?.(teamId);
-    router.push(teamId ? `/times/${teamId}` : "/times");
   }
 
   return (
@@ -44,6 +43,7 @@ const SelectTeams = ({
             color="#00e676"
           />
           <SelectValue
+            className="text-white"
             placeholder={
               teams.length === 0
                 ? "Nenhum time cadastrado"
