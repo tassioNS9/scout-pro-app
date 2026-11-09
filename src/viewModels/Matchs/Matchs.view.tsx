@@ -40,7 +40,7 @@ export default function MatchsView({
 
                 <View className="shrink">
                   <Text className="text-lg leading-tight text-scout-text">
-                    Gerenciamento de Partidas
+                    Partidas
                   </Text>
                   <Text className="text-xs text-scout-muted">
                     Crie e acompanhe suas partidas
