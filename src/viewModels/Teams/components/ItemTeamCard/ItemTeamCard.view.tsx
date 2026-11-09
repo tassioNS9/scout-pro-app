@@ -82,7 +82,7 @@ export const ItemTeamCardView: FC<
       <View className="gap-2 border-t border-scout-border pt-3">
         {/* Ver jogadores — primary action */}
         <Button
-          onPress={() => router.push(`/times/${team.id}`)}
+          onPress={() => router.push(`/players`)}
           className="w-full flex-row items-center justify-center gap-1.5 rounded-lg border border-scout-green-border bg-scout-green-dim px-3 py-2.5"
         >
           <Users size={13} color={scoutColors.green} />
