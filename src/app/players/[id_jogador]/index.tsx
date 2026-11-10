@@ -8,7 +8,7 @@ import {
   getHistoricoTotalJogador,
 } from "@/shared/repositories/players.repository";
 
-import { TabContainer } from "./components/TabContainer";
+import TabContainer from "./components/TabContainer";
 import { ScoutGradient } from "@/shared/components/ScoutGradient";
 import { scoutColors } from "@/styles/colors";
 import { BackButton } from "@/shared/components/BackButton";
