@@ -22,6 +22,8 @@ interface AppSelectProps<T extends FieldValues> {
   label?: string;
   placeholder?: string;
   options: SelectOption[];
+  disabled?: boolean;
+  onSelect?: (value: string | undefined) => void;
 }
 
 export const AppSelect = <T extends FieldValues>({
@@ -30,6 +32,8 @@ export const AppSelect = <T extends FieldValues>({
   label,
   placeholder = "Selecione",
   options,
+  disabled,
+  onSelect,
 }: AppSelectProps<T>) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -55,12 +59,22 @@ export const AppSelect = <T extends FieldValues>({
             )}
 
             <Select
+              key={value ?? "empty"}
               value={selected}
               // converte o objeto selecionado de volta para string
-              onValueChange={(option) => onChange(option?.value)}
+              onValueChange={(option) => {
+                onChange(option?.value);
+                onSelect?.(option?.value);
+              }}
               onOpenChange={setIsOpen}
             >
-              <SelectTrigger className="h-12 py-2 text-white  bg-scout-card border-b rounded-sm  border-gray-600 px-3">
+              <SelectTrigger
+                disabled={disabled}
+                className={clsx(
+                  "h-12 py-2 text-white bg-scout-card border-b rounded-sm border-gray-600 px-3",
+                  disabled && "opacity-50",
+                )}
+              >
                 <SelectValue
                   className=" text-white"
                   placeholder={placeholder}
