@@ -25,7 +25,7 @@ export default function MatchsView({
     >
       <SafeAreaView style={{ flex: 1 }} edges={["top", "left", "right"]}>
         <View className="flex-1 p-4">
-          <View className="mb-6 flex-row items-center justify-between gap-4">
+          <View className="mb-6 flex-row items-center justify-between gap-4 flex-wrap">
             <View className="flex-row items-center gap-3">
               <BackButton />
 
