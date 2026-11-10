@@ -169,6 +169,13 @@ function contadoresPorTipoEvento() {
   };
 }
 
+export async function getPlayersByTime(idTime: string) {
+  return await db.query.jogadoresTable.findMany({
+    where: eq(jogadoresTable.idTime, idTime),
+    orderBy: jogadoresTable.nome,
+  });
+}
+
 export async function getHistoricoTotalJogador(idJogador: string) {
   // 1. Total de eventos do jogador somando TODAS as partidas
 
