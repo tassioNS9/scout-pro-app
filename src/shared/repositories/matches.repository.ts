@@ -61,3 +61,15 @@ export async function getMatchById(partidaId: string) {
 
   return row; // já é o objeto "achatado" com nomeTime, ou undefined
 }
+
+export async function updateMatch(
+  id: string,
+  data: Partial<typeof partidasTable.$inferInsert>,
+) {
+  const result = await db
+    .update(partidasTable)
+    .set({ ...data, updatedAt: new Date().toDateString() })
+    .where(eq(partidasTable.id, id))
+    .returning();
+  return result[0];
+}
